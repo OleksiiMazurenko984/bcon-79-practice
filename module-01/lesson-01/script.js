@@ -61,7 +61,7 @@ out13.innerHTML =
 const z1 = 6;
 const z2 = 3;
 const out14 = document.querySelector(".out-14");
-out14.innerHTML = z1 + z2;
+out14.innerHTML = z1 * z2;
 
 //15
 const y1 = 6;
