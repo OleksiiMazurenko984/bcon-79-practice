@@ -91,7 +91,7 @@ function t12() {
   const input122 = document.querySelector(".i-12-2");
   const out12 = document.querySelector(".out-12");
 
-  out12.textContent = "Hello " + input121.value + " " + input122.value;
+  out12.textContent = `Hello ${input121.value} ${input122.value}`;
 }
 
 //13
