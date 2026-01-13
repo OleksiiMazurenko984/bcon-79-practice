@@ -150,11 +150,23 @@ function f9() {
   const input9 = document.querySelector(".i-9");
   const out9 = document.querySelector(".out-9");
 
-  if (Number(input9.value) > 0 && Number(input9.value) <= 32) {
+  if (
+    Number(input9.value) > 0 &&
+    Number(input9.value) <= 32 &&
+    Number(input9.value) % 1 === 0
+  ) {
     out9.textContent = 1;
-  } else if (Number(input9.value) > 32 && Number(input9.value) <= 43) {
+  } else if (
+    Number(input9.value) > 32 &&
+    Number(input9.value) <= 43 &&
+    Number(input9.value) % 1 === 0
+  ) {
     out9.textContent = 2;
-  } else if (Number(input9.value) > 43 && Number(input9.value) <= 64) {
+  } else if (
+    Number(input9.value) > 43 &&
+    Number(input9.value) <= 64 &&
+    Number(input9.value) % 1 === 0
+  ) {
     out9.textContent = 3;
   } else {
     out9.textContent = 0;
