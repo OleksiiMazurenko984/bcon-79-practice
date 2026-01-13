@@ -1,3 +1,5 @@
+let result = "";
+
 //  Task 1
 // Кнопка .b-1 запускає функцію fn1. Функція повинна виводити в .out-1 рядок вигляду:
 //     1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16_
@@ -8,9 +10,11 @@ btn1.onclick = fn1;
 
 function fn1() {
   const out1 = document.querySelector(".out-1");
+  result = "";
   for (let i = 1; i < 17; i++) {
-    out1.textContent += `${i}_`;
+    result += `${i}_`;
   }
+  out1.textContent = result;
 }
 
 //  Task 2
@@ -23,9 +27,12 @@ btn2.onclick = fn2;
 
 function fn2() {
   const out2 = document.querySelector(".out-2");
+  result = "";
   for (let i = 12; i < 39; i += 2) {
-    out2.textContent += `${i}_`;
+    result += `${i}_`;
   }
+
+  out2.textContent = result;
 }
 
 //  Task 3
@@ -38,9 +45,11 @@ btn3.onclick = fn3;
 
 function fn3() {
   const out3 = document.querySelector(".out-3");
+  result = "";
   for (let i = 25; i > 6; i--) {
-    out3.textContent += `${i}_`;
+    result += `${i}_`;
   }
+  out3.textContent = result;
 }
 //  Task 4
 // Кнопка .b-4 запускає функцію fn4. Функція повинна виводити в .out-4 рядок вигляду:
@@ -52,9 +61,11 @@ btn4.onclick = fn4;
 
 function fn4() {
   const out4 = document.querySelector(".out-4");
+  result = "";
   for (let i = 77; i > 34; i -= 3) {
-    out4.textContent += `${i}_`;
+    result += `${i}_`;
   }
+  out4.textContent = result;
 }
 
 //  Task 5
@@ -67,13 +78,15 @@ btn5.onclick = fn5;
 
 function fn5() {
   const out5 = document.querySelector(".out-5");
+  result = "";
   for (let i = 1; i < 18; i++) {
     if (i % 2 !== 0) {
-      out5.textContent += `${i}_*`;
+      result += `${i}_*`;
     } else {
-      out5.textContent += `${i}_**`;
+      result += `${i}_**`;
     }
   }
+  out5.textContent = result;
 }
 
 //  Task 6
@@ -92,10 +105,11 @@ btn6.onclick = fn6;
 function fn6() {
   const input6 = document.querySelector(".i-6");
   const out6 = document.querySelector(".out-6");
-  out6.innerHTML = null;
+  result = "";
   for (let i = 0; i < Number(input6.value); i++) {
-    out6.innerHTML += "******<br>";
+    result += "******<br>";
   }
+  out6.innerHTML = result;
 }
 //  Task 7
 // Є input .i-7, куди користувач може ввести число більше нуля (перевірок не робимо, приймаємо як факт).
@@ -110,10 +124,11 @@ btn7.onclick = fn7;
 function fn7() {
   const input7 = document.querySelector(".i-7");
   const out7 = document.querySelector(".out-7");
-  out7.innerHTML = null;
-  for (let i = 0; i <= Number(input7.value); i++) {
-    out7.textContent += `${Number(input7.value) - i}_`;
+  result = "";
+  for (let i = Number(input7.value); i > 0; i--) {
+    result += `${i}_`;
   }
+  out7.textContent = result;
 }
 
 //  Task 8
@@ -131,11 +146,12 @@ function fn8() {
   const input81 = document.querySelector(".i-81");
   const input82 = document.querySelector(".i-82");
   const out8 = document.querySelector(".out-8");
-  out8.innerHTML = null;
+  result = "";
 
   for (let i = Number(input81.value); i <= Number(input82.value); i++) {
-    out8.textContent += `${i}_`;
+    result += `${i}_`;
   }
+  out8.textContent = result;
 }
 
 //  Task 9
@@ -157,11 +173,12 @@ function fn9() {
   const out9 = document.querySelector(".out-9");
   const maxNum = Math.max(Number(input91.value), Number(input92.value));
   const minNum = Math.min(Number(input91.value), Number(input92.value));
-  out9.innerHTML = null;
+  result = "";
 
   for (let i = minNum; i <= maxNum; i++) {
-    out9.textContent += `${i}_`;
+    result += `${i}_`;
   }
+  out9.textContent = result;
 }
 
 //  Task 10
@@ -173,9 +190,11 @@ btn10.onclick = fn10;
 
 function fn10() {
   const out10 = document.querySelector(".out-10");
+  result = "";
   for (let i = 1950; i <= 1970; i += 2) {
-    out10.textContent += `${i}_`;
+    result += `${i}_`;
   }
+  out10.textContent = result;
 }
 
 //  Task 11
@@ -192,9 +211,11 @@ btn11.onclick = fn11;
 function fn11() {
   const divs11 = document.querySelectorAll(".div-11");
   const out11 = document.querySelector(".out-11");
+  result = "";
   for (let i = 0; i < divs11.length; i++) {
-    out11.textContent += `${divs11[i].textContent}_`;
+    result += `${divs11[i].textContent}_`;
   }
+  out11.textContent = result;
 }
 
 //  Task 12
@@ -242,12 +263,14 @@ btn14.onclick = fn14;
 function fn14() {
   const inputs = document.getElementsByClassName("i-14");
   const out14 = document.querySelector(".out-14");
+  result = "";
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].checked) {
-      out14.textContent = inputs[i].value;
+      result = inputs[i].value;
       break;
     }
   }
+  out14.textContent = result;
 }
 
 //  Task 15
@@ -260,8 +283,9 @@ btn15.onclick = fn15;
 
 function fn15() {
   const out15 = document.querySelector(".out-15");
-
+  result = "";
   for (let i = 0; i <= 10; i++) {
-    out15.textContent += `${10 - i}_${i}_`;
+    result += `${10 - i}_${i}_`;
   }
+  out15.textContent = result;
 }
